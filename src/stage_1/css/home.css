@@ -1,0 +1,106 @@
+.notes {
+    font-family: "Verdana", Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.notes .notes-title {
+    display: flex;
+    justify-content: center;
+}
+
+.notes .notes-links-container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.notes .notes-links-container a {
+    color: white;
+    font-size: 24px;
+    margin: 10px;
+}
+
+.notes .notes-lesson-container {
+    padding: 10px;
+}
+
+.notes .notes-lesson-container .lesson-title {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.lesson-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.lesson-cards-container .lesson-card {
+    height: 350px;
+    margin: 10px;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lesson-cards-container .lesson-card .card-title {
+    font-size: 22px;
+    background-color: black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.lesson-cards-container .lesson-card .card-sub-title {
+    background-color: black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.lesson-cards-container .lesson-card .card-description {
+    background-color: black;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.lesson-cards-container .lesson-card .card-footer {
+    background-color: black;
+    align-items: flex-end;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.lesson-cards-container .lesson-card .card-footer a {
+    color: white;
+}
+
+.lesson-cards-container .lesson-card .card-footer a:visited {
+    color: grey;
+}
+
+.notes-glossary-container {
+    margin: 10px;
+}
+
+.notes-glossary-container .glossary-items-container li {
+    margin: 10px;
+}
+
+.notes-glossary-container .glossary-title,
+.notes-glossary-container .glossary-items-container,
+.lesson-cards-container .lesson-card,
+.lesson-cards-container .lesson-card .card-title,
+.lesson-cards-container .lesson-card .card-footer,
+.notes .notes-lesson-container .lesson-title {
+    display: flex;
+    justify-content: center;
+}

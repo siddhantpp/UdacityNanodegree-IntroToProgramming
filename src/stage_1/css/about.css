@@ -1,0 +1,29 @@
+.about {
+    background-color: black;
+    font-family: cursive, sans-serif, serif;
+    font-size: 18px;
+}
+
+.about .about-links-container {
+    position: absolute;
+    right: 40px;
+    top: 30px;
+}
+
+.about .about-links-container a {
+    color: white;
+    font-family: "Verdana", sans-serif;
+    font-size: 24px;
+    margin: 10px;
+}
+
+.about .introduction-container {
+    color: white;
+    margin: 10px;
+    position: absolute;
+    top: 291px;
+}
+
+.about .introduction-container .udacity-gif {
+    margin: 10px;
+}

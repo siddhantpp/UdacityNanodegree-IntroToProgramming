@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sid's Notes Project</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body class="notes common-color-white">
+    <!--Common title for the page-->
+    <h1 class="notes-title">Introduction to Programming Nanodegree</h1>
+    <span class="notes-links-container"><a href="./home.html">Home</a><a href="./about.html">About</a></span>
+    <div class="notes-lesson-container">
+        <h2 class="lesson-title">Lesson One - Getting Started with HTML</h2>
+        <!-- Notice the naming convention for classes, the first child usually includes the name of the parent class-->
+        <div class="lesson-cards-container">
+            <!-- Hopefully we'll learn something that helps avoid repetitive structures for HTML later on, just like CSS, maybe using JS ;) -->
+            <div class="lesson-card">
+                <h3 class="card-title">The World Wide Web (WWW)</h3>
+                <p class="card-description">
+                    The internet is a network of computers communicating with each other, establishing links that make up the 'web'. The key actors involved in this web are: <br /> the <b>client</b> that has a web 'browser' such as <em>Google Chrome</em> or <em>Firefox</em>, the <b>internet</b> itself, the <b>communications protocol</b> - for instance <em>HTTP</em>, and <b>servers</b> that serve content such as <em>HTML documents along with images, videos and so on</em>.
+                </p>
+                <span class="card-footer">Use this&nbsp;<a href="https://www.youtube.com/watch?v=kzyfIiVZPJA">video</a>&nbsp;for reference.</span>
+            </div>
+            <div class="lesson-card">
+                <h3 class="card-title">How Computers Process Commands</h3>
+                <p class="card-description">
+                    Computers process instructions <em>literally</em>, meaning they can't make handle multiple inferences of a statement (unless they are <b>trained</b> to do so).
+                    <br /> This implies that computers can't deal with <b>ambuiguity</b> and hence are very sensitive to typos and mistakes.
+                </p>
+                <span class="card-footer"> Use this&nbsp;<a href="https://classroom.udacity.com/nanodegrees/nd000/parts/0001345401/modules/385165862675460/lessons/3873828673/concepts/34843694920923#">document</a>&nbsp;for reference.</span>
+            </div>
+            <div class="lesson-card">
+                <h3 class="card-title">HTML: The Basics - Card One</h3>
+                <h4 class="card-sub-title">Tags, Elements, Attributes</h4>
+                <p class="card-description">
+                    <b>Tags</b> are the <em>building blocks</em> of HTML. Almost every new idea in HTML is enclosed in opening and closing tags, with the exception of certain self closing tags such as img and br.
+                    <br />
+                    <b>Attributes</b> are <em>properties</em> of HTML tags that may or may not have values and specify details of how the element should behave.
+                    <b>Elements</b> can be understood as a complete html idea or tag, having independent existence in the DOM.
+                </p>
+            </div>
+            <div class="lesson-card">
+                <h3 class="card-title">HTML: The Basics - Card Two</h3>
+                <h4 class="card-sub-title">Inline and Block Elements</h4>
+                <p class="card-description">
+                    The core idea is that block elements such as <b>'p', 'div', 'form'</b> have an independent box or container that creates a line break, while inline elements such as <b>'a', 'img'</b> allow you to continue on the same line.
+                    <br> It may be noted that <b>'br'</b> is an <em>inline</em> element, although it may appear to behave as block.
+                </p>
+                <span class="card-footer"> Use this online reference:&nbsp;<a href="http://www.w3schools.com/">W3 Schools</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="notes-lesson-container">
+        <h2 class="lesson-title">Lesson Two - Creating a Structured Document with HTML</h2>
+        <!-- Notice the naming convention for classes, the first child usually includes the name of the parent class-->
+        <div class="lesson-cards-container">
+            <!-- Hopefully we'll learn something that helps avoid repetitive structures for HTML later on, just like CSS, maybe using JS ;) -->
+            <div class="lesson-card">
+                <h3 class="card-title">Cascading Style Sheets (CSS)</h3>
+                <p class="card-description">
+                    CSS is a simple mechanism for adding style to Web documents. Using a house analogy, HTML can be considered as the <b>pillars</b> while CSS is the paint and everything else that gives it shape and looks.
+                    <br>
+                    CSS helps avoid repetition of code by allowing re-use of styles.
+                    <br>
+                    CSS files can be linked to HTML document using the <b>link</b> tag with 'rel' as <em>'stylesheet'</em>
+                </p>
+                <span class="card-footer">Use this&nbsp;<a href="https://css-tricks.com/almanac/">almanac</a>&nbsp;for reference.</span>
+            </div>
+            <div class="lesson-card">
+                <h3 class="card-title">CSS: The Basics - Card One</h3>
+                <h4 class="card-sub-title">Layout, Containers, Boxes</h4>
+                <p class="card-description">
+                    CSS allows for a lot of <b>flexibility</b> in styling a web page. Elements can be selected using <em>tag, class or attribute</em>.
+                    <br />
+                    The <b>box-styling</b> property allows you to structure elements easily based on <em>margin, border and padding</em> dimensions.
+                    <br />
+                    Content can be <b>organised</b> into containers such as <em>div, span</em> and can be styled as required.
+                </p>
+            </div>
+            <div class="lesson-card">
+                <h3 class="card-title">CSS: The Basics - Card Two</h3>
+                <h4 class="card-sub-title">Flexbox Layout</h4>
+                <p class="card-description">
+                    The flex box layout can be activated by setting display property to <b>'flex'</b> and enables a number of cool features to style your web page, as demonstrated by this one.
+                </p>
+                <span class="card-footer"> Use this online reference:&nbsp;<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Complete Guide To Flexbox</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="notes-glossary-container">
+        <h2 class="glossary-title">Glossary</h2>
+        <div class="glossary-items-container">
+            <ul>
+                <li><b>CSS</b>: Cascading Style Sheets</li>
+                <li><b>DOM</b>: Document Object Model</li>
+                <li><b>HTML</b>: HyperText Markup Language</li>
+                <li><b>HTTP</b>: HyperText Transport Protocol</li>
+                <li><b>WWW</b>: World Wide Web</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

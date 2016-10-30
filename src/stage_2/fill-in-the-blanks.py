@@ -108,7 +108,7 @@ def getBlanks(para):
 
 def fillBlanks(originalString, blankNumber, answer):
     ''' Assumption: string does not otherwise contain numbers and all numbers are enclosed within
-        opening and closing ___
+        opening and closing __
         Input: original string, blank number to fill, value to be filled
         Returns: The original string with blanks filled '''
     originalStringList = originalString.split()

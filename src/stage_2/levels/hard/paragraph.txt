@@ -1,0 +1,12 @@
+When you create a __1__, certain __2__s are automatically
+generated for you if you don't make them manually. These contain multiple
+underscores before and after the word defining them.  When you write
+a __1__, you almost always include at least the __3__ __2__, defining
+variables for when __4__s of the __1__ get made.  Additionally, you generally
+want to create a __5__ __2__, which will allow a string representation
+of the method to be viewed by other developers.
+
+You can also create binary operators, like __6__ and __7__, which
+allow + and - to be used by __4__s of the __1__.  Similarly, __8__,
+__9__, and __10__ allow __4__s of the __1__ to be compared
+(with <, >, and ==).

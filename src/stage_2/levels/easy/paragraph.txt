@@ -1,0 +1,11 @@
+A common first thing to do in a language is display
+'Hello __1__!'  In __2__ this is particularly easy; all you have to do
+is type in:
+__3__ "Hello __1__!"
+Of course, that isn't a very useful thing to do. However, it is an
+example of how to output to the user using the __3__ command, and
+produces a program which does something, so it is useful in that capacity.
+
+It may seem a bit odd to do something in a Turing complete language that
+can be done even more easily with an __4__ file in a browser, but it's
+a step in learning __2__ syntax, and that's really its purpose.

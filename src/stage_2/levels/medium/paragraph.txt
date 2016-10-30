@@ -1,4 +1,4 @@
-A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
-adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
-don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
-tuple, and ___4___ or can be more complicated such as objects and lambda functions.
+A __1__ is created with the def keyword. You specify the inputs a __1__ takes by
+adding __2__ separated by commas between the parentheses. __1__s by default return __3__ if you
+don't specify the value to return. __2__ can be standard data types such as string, number, dictionary,
+tuple, and __4__ or can be more complicated such as objects and lambda functions.

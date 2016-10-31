@@ -1,6 +1,11 @@
 # IPND Stage 2 Final Project
 
+# --- GLOBAL IMPORTS ---
 import sys
+
+# --- GLOBAL CONSTANTS ---
+MIN_COUNT = 0
+INVALID_MIN_RETURN_VALUE = -1
 
 # --- GLOBAL VARIABLES ---
 # Open files corresponding to each level, read and save paragraphs
@@ -48,17 +53,17 @@ def getAttempts():
     print 'You need to make many choices in this game, but have a limited number of chances'
     print 'For instance, you now have 3 chances to set this limit.'
     attempts = 3
-    while attempts > 0:
+    while attempts > MIN_COUNT:
         print
         max_attempts = getResponseInLowerCase("Enter a maximum number of attempts that is greater than zero: ")
-        if int(max_attempts) and int(max_attempts) > 0:
+        if int(max_attempts) and int(max_attempts) > MIN_COUNT:
             return int(max_attempts)
         else:
             attempts -= 1
-            if attempts > 0:
+            if attempts > MIN_COUNT:
                 print 'Invalid response. Please try again. You have ' + str(attempts) + ' chances left'
     print 'Sorry, you have exceeded the maximum number of allowed attempts.'
-    return -1
+    return INVALID_MIN_RETURN_VALUE
 
 def getLevel(allowed_attempts):
     ''' Inputs: The number of allowed attempts to select a level
@@ -66,7 +71,7 @@ def getLevel(allowed_attempts):
     # could use a global variable for attempts outside, but keeping this function exportable
     print 'Select your difficulty level. Available choices are easy, medium and hard.'
     attempts = allowed_attempts
-    while attempts > 0:
+    while attempts > MIN_COUNT:
         level_string = getResponseInLowerCase("Type in your choice: ")
         if level_string == 'easy':
             print 'You have chosen Easy!'
@@ -79,10 +84,10 @@ def getLevel(allowed_attempts):
             return 2
         else:
             attempts -= 1
-            if attempts > 0:
+            if attempts > MIN_COUNT:
                 print 'Invalid choice! Please try again. You have ' + str(attempts) + ' chances left'
     print 'Sorry, you have exceeded the maximum number of allowed attempts.'
-    return -1
+    return INVALID_MIN_RETURN_VALUE
 
 def selectParagraph(level):
     ''' Input: Level selected, as number
@@ -100,8 +105,8 @@ def getBlanks(para):
     ''' Input: The paragraph
         Returns: number of blanks in the paragraph '''
     number = 1
-    count = 0
-    while para.find(str(number)) > -1:
+    count = MIN_COUNT
+    while para.find(str(number)) > INVALID_MIN_RETURN_VALUE:
         count += 1
         number += 1
     return count
@@ -141,7 +146,7 @@ def checkAnswers(level, attempts):
     para = selectParagraph(level)
     blanksToFill = getBlanks(para)
     currentBlank = 1
-    while blanksToFill > 0:
+    while blanksToFill > MIN_COUNT:
         printBlock('The paragraph in its current state is:\n' + para)
         answer = getResponseInLowerCase('Enter your answer for __' + str(currentBlank) + '__: ')
         if isCorrectAnswer(level, currentBlank, answer):
@@ -153,10 +158,10 @@ def checkAnswers(level, attempts):
             blanksToFill -= 1
         else:
             attempts_left -= 1
-            if attempts_left > 0:
+            if attempts_left > MIN_COUNT:
                 print 'Incorrect response. ' + str(attempts_left) + ' chances left.'
             else:
-                print 'You have run out of attempts'
+                print 'Oh, no! You have run out of chances!'
                 return [False, para]
     return [True, para]
 
@@ -165,14 +170,13 @@ def runGame():
     ''' Calls helper functions and controls execution '''
     printBlock('Welcome to pyWise v1.0 - A Python refresher game by Siddhant Pardeshi')
     attempts = getAttempts()
-    if attempts > -1:
+    if attempts > INVALID_MIN_RETURN_VALUE:
         level = getLevel(attempts)
-        if level > -1:
+        if level > INVALID_MIN_RETURN_VALUE:
             answerState = checkAnswers(level, attempts)
             if (answerState[0] == True):
                 printBlock(answerState[1])
                 printBlock('You Win! Well done.')
-                return 0
             else:
                 endGame()
         else:

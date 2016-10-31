@@ -5,7 +5,14 @@ import sys
 
 # --- GLOBAL CONSTANTS ---
 MIN_COUNT = 0
+INITIAL_MIN_ATTEMPTS = 3
 INVALID_MIN_RETURN_VALUE = -1
+
+LIST_INDEX_LEVEL_EASY = 0
+LIST_INDEX_LEVEL_MEDIUM = 1
+LIST_INDEX_LEVEL_HARD = 2
+
+NORMAL_PROGRAM_EXIT_CODE = 0
 
 # --- GLOBAL VARIABLES ---
 # Open files corresponding to each level, read and save paragraphs
@@ -26,6 +33,8 @@ hard_para = hard_text_file.read()
 hard_answers = hard_answers_file.read().splitlines()
 
 para_list = [easy_para, medium_para, hard_para]
+''' The LIST_INDEX_LEVEL_xxxx constants defined in GLOBAL CONSTANTS correspond to the indexes of the
+    below list '''
 answer_list = [easy_answers, medium_answers, hard_answers]
 
 # --- HELPER FUNCTIONS ---
@@ -49,10 +58,10 @@ def printBlock(message):
 def getAttempts():
     ''' Returns: The number of allowed attempts defined by the user
         Allows the user to define the number of attempts for each answer.
-        Assumes an initial value of 3 for the choice iteself '''
+        Assumes an initial value for the choice iteself '''
     print 'You need to make many choices in this game, but have a limited number of chances'
-    print 'For instance, you now have 3 chances to set this limit.'
-    attempts = 3
+    print 'For instance, you now have ' + str(INITIAL_MIN_ATTEMPTS) + ' chances to set this limit.'
+    attempts = INITIAL_MIN_ATTEMPTS
     while attempts > MIN_COUNT:
         print
         max_attempts = getResponseInLowerCase("Enter a maximum number of attempts that is greater than zero: ")
@@ -75,13 +84,13 @@ def getLevel(allowed_attempts):
         level_string = getResponseInLowerCase("Type in your choice: ")
         if level_string == 'easy':
             print 'You have chosen Easy!'
-            return 0
+            return LIST_INDEX_LEVEL_EASY
         elif level_string == 'medium':
             print 'You have chosen Medium!'
-            return 1
+            return LIST_INDEX_LEVEL_MEDIUM
         elif level_string == 'hard':
             print 'You have chosen Hard!'
-            return 2
+            return LIST_INDEX_LEVEL_HARD
         else:
             attempts -= 1
             if attempts > MIN_COUNT:
@@ -92,11 +101,11 @@ def getLevel(allowed_attempts):
 def selectParagraph(level):
     ''' Input: Level selected, as number
         Returns: The corresponding paragraph '''
-    if level == 0:
+    if level == LIST_INDEX_LEVEL_EASY:
         return easy_para
-    elif level == 1:
+    elif level == LIST_INDEX_LEVEL_MEDIUM:
         return medium_para
-    elif level == 2:
+    elif level == LIST_INDEX_LEVEL_HARD:
         return hard_para
     else:
         return None
@@ -177,6 +186,7 @@ def runGame():
             if (answerState[0] == True):
                 printBlock(answerState[1])
                 printBlock('You Win! Well done.')
+                return NORMAL_PROGRAM_EXIT_CODE
             else:
                 endGame()
         else:
